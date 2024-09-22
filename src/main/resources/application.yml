@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: spring-boot-resilience4j
+  server:
+    port: 8080
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      backendA:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 5s
